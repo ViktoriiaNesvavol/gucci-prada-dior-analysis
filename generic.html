@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic Page - Massively by HTML5 UP</title>
+		<title>SPARQL Queries and LLM Prompts</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Massively</a>
+						<a href="index.html" class="logo">Dior, Prada, Gucci</a>
 					</header>
 
 				<!-- Nav -->
@@ -29,12 +29,7 @@
 							<li class="active"><a href="generic.html">Generic Page</a></li>
 							<li><a href="elements.html">Elements Reference</a></li>
 						</ul>
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
+			
 					</nav>
 
 				<!-- Main -->
@@ -44,83 +39,129 @@
 							<section class="post">
 								<header class="major">
 									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									<h1>SPARQL Queries<br />
+									and LLM Prompts</h1>
+									<p>This section documents the SPARQL queries and LLM prompts used to extract, verify, and enrich information about luxury fashion brands (Gucci, Prada, Dior) in Wikidata. We combined structured querying with intelligent prompting to identify gaps and generate insights.</p>
 								</header>
 								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
-							</section>
+								<p><p>Here are the demonstrations of each mandatory SPARQL keyword: <strong>OPTIONAL</strong>, <strong>DISTINCT</strong>, <strong>UNION</strong>, <strong>FILTER</strong>, <strong>REGEX</strong>, <strong>LIMIT</strong>, and <strong>ORDER BY</strong>.</p>
 
-					</div>
+    <hr>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+    <h4 id="optional-brands-location-and-founder">1️⃣ OPTIONAL: Brands, Location, and Founder</h4>
+    <p><strong>Purpose:</strong> Uses <strong>OPTIONAL</strong> to retrieve brands and their founding locations, <em>optionally</em> including the founder's name. This ensures that even if a founder isn't linked, the brand and its location are still included, providing a comprehensive list.</p>
+    <pre><code>SELECT ?brand ?brandLabel ?locationLabel ?founderLabel
+WHERE {
+  VALUES ?brand {
+    wd:Q202175  # Gucci
+    wd:Q153545  # Prada
+    wd:Q207827  # Dior
+  }
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+  OPTIONAL { ?brand wdt:P112 ?founder . }
+  OPTIONAL { ?brand wdt:P159 ?location . }
 
-			</div>
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY ?brandLabel</code></pre>
+    <img src="images/optional.png" alt="Screenshot of Query 1 Results">
+    <p>📎 <a href="https://w.wiki/ESNQ">Link to Wikidata Query Service Results for Query 1</a></p>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <hr>
 
+    <h4 id="distinct-unique-countries-of-headquarters">2️⃣ DISTINCT: Unique Countries of Headquarters</h4>
+    <p><strong>Purpose:</strong> Uses <strong>DISTINCT</strong> to illustrate how to get a unique list of countries where these brands' headquarters are located, preventing duplicate entries for countries shared by multiple brands.</p>
+    <pre><code>SELECT DISTINCT ?country ?countryLabel WHERE {
+  VALUES ?brand { wd:Q202175 wd:Q153545 wd:Q207827 }
+  ?brand wdt:P159 ?headquarters .
+  ?headquarters wdt:P17 ?country .
+
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en".
+  }
+}
+ORDER BY ?countryLabel</code></pre>
+    <img src="images/distinct.png" alt="Screenshot of Query 2 Results">
+    <p>📎 <a href="https://w.wiki/ESnx">Link to Wikidata Query Service Results for Query 2</a></p>
+
+    <hr>
+
+    <h4 id="union-associated-people-for-gucci-or-prada">3️⃣ UNION: Associated People for Gucci or Prada</h4>
+    <p><strong>Purpose:</strong> Employs <strong>UNION</strong> to combine results from different relationship types (founder, creative director, general member) to find all people associated with Gucci or Prada, regardless of their specific role.</p>
+    <pre><code>SELECT DISTINCT ?person ?personLabel ?brandLabel WHERE {
+  VALUES ?brand {
+    wd:Q202175
+    wd:Q153545
+  }
+  { ?brand wdt:P112 ?person. }
+  UNION
+  { ?brand wdt:P12617 ?person. }
+  UNION
+  { ?brand wdt:P1037 ?person. }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY (?personLabel)</code></pre>
+    <img src="images/union.png" alt="Screenshot of Query 3 Results">
+    <p>📎 <a href="https://w.wiki/ESn$">Link to Wikidata Query Service Results for Query 3</a></p>
+
+    <hr>
+
+    <h4 id="filter-regex-gucci-silk-clothing-items">4️⃣ FILTER & REGEX: Gucci Silk Clothing Items</h4>
+    <p><strong>Purpose:</strong> This query expertly combines <strong>FILTER</strong> and <strong>REGEX</strong> to narrow down results. It first identifies items classified as "clothing" that are associated with "Gucci" (using <strong>REGEX</strong> on the label). Then, it further refines these results, ensuring that the item's label or its description also contains the word "silk" (using another <strong>REGEX</strong> with case-insensitivity). This dual filtering allows for highly specific data extraction based on both semantic type and textual patterns.</p>
+    <pre><code>SELECT DISTINCT ?item ?itemLabel ?itemDescription WHERE {
+  ?item wdt:P31/wdt:P279* wd:Q11460 .
+  ?item rdfs:label ?itemLabel .
+
+
+  FILTER (
+    REGEX(?itemLabel, "Gucci", "i") ||
+    REGEX(?itemLabel, "silk", "i") ||
+    REGEX(?itemDescription, "silk", "i"))
+  FILTER (LANG(?itemLabel) = "en")
+
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en".
+  }
+}
+ORDER BY ?itemLabel
+LIMIT 10</code></pre>
+    <img src="images/filter+regex.png" alt="Screenshot of Query 4 Results">
+    <p>📎 <a href="https://w.wiki/ESoB">Link to Wikidata Query Service Results for Query 4</a></p>
+
+    <hr>
+
+    <h4 id="limit-top-5-common-item-types">5️⃣ LIMIT: Top 5 Common Item Types</h4>
+    <p><strong>Purpose:</strong> This query leverages the <strong>LIMIT</strong> keyword to rank Gucci, Prada, and Dior based on the number of distinct fashion collections they have documented on Wikidata. By counting and ordering these collections, it provides insight into which brand has the most extensive public record of its creative outputs, offering a robust example of <strong>LIMIT</strong> applied directly to our topic brands.</p>
+    <pre><code>SELECT ?brand ?brandLabel (COUNT(DISTINCT ?collection) AS ?numberOfCollections) WHERE {
+  VALUES ?brand { wd:Q178516
+                  wd:Q193136
+                  wd:Q542767
+                 }
+  ?brand wdt:P6379 ?collection .
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+GROUP BY ?brand ?brandLabel
+ORDER BY DESC(?numberOfCollections)
+LIMIT 3</code></pre>
+    <img src="images/limit.png" alt="Screenshot of Query 5 Results">
+    <p>📎 <a href="https://w.wiki/ESoS">Link to Wikidata Query Service Results for Query 5</a></p>
+
+    <hr>
+
+    <h4 id="order-by-brands-by-name">6️⃣ ORDER BY: Brands by Name</h4>
+    <p><strong>Purpose:</strong> Uses <strong>ORDER BY</strong> to sort the results by the brand's name (?brandLabel) in ascending alphabetical order, providing a structured and easily consumable list.</p>
+    <pre><code>SELECT ?brand ?brandLabel ?foundingYear WHERE {
+  VALUES ?brand { wd:Q178516 wd:Q193136 wd:Q542767 }
+  ?brand wdt:P571 ?foundingDate .
+  BIND(YEAR(?foundingDate) AS ?foundingYear)
+
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en".
+  }
+}
+ORDER BY ?brandLabel</code></pre>
+    <img src="images/orderby.png" alt="Screenshot of Query 6 Results">
+    <p>📎 <a href="https://w.wiki/ESoZ">Link to Wikidata Query Service Results for Query 6</a></p>		
 	</body>
 </html>
