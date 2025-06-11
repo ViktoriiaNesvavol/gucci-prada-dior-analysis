@@ -2675,7 +2675,13 @@ input, select, textarea {
 			-ms-transform: scale(1.05);
 			transform: scale(1.05);
 		}
-
+	.screenshot {
+  		 width: 400px;     
+   		 height: auto;     
+  		 display: block;
+   		 margin: 0 auto 1rem auto; 
+    		 object-fit: cover;
+}
 /* Actions */
 
 	ul.actions {
