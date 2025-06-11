@@ -50,42 +50,43 @@
 
     <h4 id="optional-brands-location-and-founder">1️⃣ OPTIONAL: Brands, Location, and Founder</h4>
     <p><strong>Purpose:</strong> Uses <strong>OPTIONAL</strong> to retrieve brands and their founding locations, <em>optionally</em> including the founder's name. This ensures that even if a founder isn't linked, the brand and its location are still included, providing a comprehensive list.</p>
-    <img src="images/optional.png" alt="Screenshot of Query 1 Results">
+    <img src="images/optional.png" alt="Screenshot of Query 1 Results" class="screenshot">
+
     <p>📎 <a href="https://w.wiki/ESNQ">Link to Wikidata Query Service Results for Query 1</a></p>
 
     <hr>
 
     <h4 id="distinct-unique-countries-of-headquarters">2️⃣ DISTINCT: Unique Countries of Headquarters</h4>
     <p><strong>Purpose:</strong> Uses <strong>DISTINCT</strong> to illustrate how to get a unique list of countries where these brands' headquarters are located, preventing duplicate entries for countries shared by multiple brands.</p>
-    <img src="images/distinct.png" alt="Screenshot of Query 2 Results">
+    <img src="images/distinct.png" alt="Screenshot of Query 2 Results" class="screenshot">
     <p>📎 <a href="https://w.wiki/ESnx">Link to Wikidata Query Service Results for Query 2</a></p>
 
     <hr>
 
     <h4 id="union-associated-people-for-gucci-or-prada">3️⃣ UNION: Associated People for Gucci or Prada</h4>
     <p><strong>Purpose:</strong> Employs <strong>UNION</strong> to combine results from different relationship types (founder, creative director, general member) to find all people associated with Gucci or Prada, regardless of their specific role.</p>
-    <img src="images/union.png" alt="Screenshot of Query 3 Results">
+    <img src="images/union.png" alt="Screenshot of Query 3 Results" class="screenshot">
     <p>📎 <a href="https://w.wiki/ESn$">Link to Wikidata Query Service Results for Query 3</a></p>
 
     <hr>
 
     <h4 id="filter-regex-gucci-silk-clothing-items">4️⃣ FILTER & REGEX: Gucci Silk Clothing Items</h4>
     <p><strong>Purpose:</strong> This query expertly combines <strong>FILTER</strong> and <strong>REGEX</strong> to narrow down results. It first identifies items classified as "clothing" that are associated with "Gucci" (using <strong>REGEX</strong> on the label). Then, it further refines these results, ensuring that the item's label or its description also contains the word "silk" (using another <strong>REGEX</strong> with case-insensitivity). This dual filtering allows for highly specific data extraction based on both semantic type and textual patterns.</p>
-    <img src="images/filter+regex.png" alt="Screenshot of Query 4 Results">
+    <img src="images/filter+regex.png" alt="Screenshot of Query 4 Results" class="screenshot">
     <p>📎 <a href="https://w.wiki/ESoB">Link to Wikidata Query Service Results for Query 4</a></p>
 
     <hr>
 
     <h4 id="limit-top-5-common-item-types">5️⃣ LIMIT: Top 5 Common Item Types</h4>
     <p><strong>Purpose:</strong> This query leverages the <strong>LIMIT</strong> keyword to rank Gucci, Prada, and Dior based on the number of distinct fashion collections they have documented on Wikidata. By counting and ordering these collections, it provides insight into which brand has the most extensive public record of its creative outputs, offering a robust example of <strong>LIMIT</strong> applied directly to our topic brands.</p>
-    <img src="images/limit.png" alt="Screenshot of Query 5 Results">
+    <img src="images/limit.png" alt="Screenshot of Query 5 Results" class="screenshot">
     <p>📎 <a href="https://w.wiki/ESoS">Link to Wikidata Query Service Results for Query 5</a></p>
 
     <hr>
 
     <h4 id="order-by-brands-by-name">6️⃣ ORDER BY: Brands by Name</h4>
     <p><strong>Purpose:</strong> Uses <strong>ORDER BY</strong> to sort the results by the brand's name (?brandLabel) in ascending alphabetical order, providing a structured and easily consumable list.</p>
-    <img src="images/orderby.png" alt="Screenshot of Query 6 Results">
+    <img src="images/orderby.png" alt="Screenshot of Query 6 Results" class="screenshot">
     <p>📎 <a href="https://w.wiki/ESoZ">Link to Wikidata Query Service Results for Query 6</a></p>		
 	</body>
 </html>
