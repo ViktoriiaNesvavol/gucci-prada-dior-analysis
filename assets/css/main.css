@@ -2676,7 +2676,7 @@ input, select, textarea {
 			transform: scale(1.05);
 		}
 	.screenshot {
-  		 width: 400px;     
+  		 width: 200px;     
    		 height: auto;     
   		 display: block;
    		 margin: 0 auto 1rem auto; 
