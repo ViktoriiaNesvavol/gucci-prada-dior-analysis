@@ -53,183 +53,167 @@
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Custom font import for a polished look */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body, html {
+        
+        /* Base styles for the body to ensure full screen and B&W theme */
+        body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8;
-            color: #333333;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            width: 100%;
+            background-color: #f8f8f8; /* Very light gray background */
+            color: #333333; /* Dark gray for main text */
+            margin: 0; /* Remove default browser margin */
+            padding: 0; /* Remove default browser padding */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            display: flex; /* Use flexbox for centering content */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center content horizontally */
         }
-        .centered-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            width: 100%;
-        }
+
+        /* Main content container styling */
+        /* Takes full width, adds padding, and sets a max-width for readability on large screens */
         .full-width-container {
             width: 100%;
-            padding: 2.5rem;
-            box-sizing: border-box;
-            max-width: 1200px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 0.5rem;
-            margin-top: 2rem;
+            padding: 2.5rem; /* ~40px padding on all sides for content */
+            box-sizing: border-box; /* Include padding in element's total width */
+            max-width: 1200px; /* Limits overall content width for better readability on very wide screens */
+            background-color: #ffffff; /* White background for the content area */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            border-radius: 0.5rem; /* Rounded corners */
         }
-        .image-links {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin-bottom: 2rem;
-            gap: 2rem;
-        }
-        .image-links a {
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-        .image-links img {
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-            width: 180px;
-            height: auto;
-            background: #fff;
-        }
-        .image-links a:hover {
-            transform: scale(1.05);
-        }
+
+        /* Styling for links to maintain the black and white theme */
         a {
-            color: #555555;
+            color: #555555; /* Darker gray for links */
             text-decoration: underline;
-            transition: color 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out; /* Smooth transition for hover effect */
         }
         a:hover {
-            color: #000000;
+            color: #000000; /* Black on hover */
         }
+        
+        /* Styling for horizontal rules */
         hr {
-            border-color: #e5e7eb;
+            border-color: #e5e7eb; /* Light gray border for dividers */
             border-width: 1px;
-            border-radius: 9999px;
+            border-radius: 9999px; /* Full rounded corners for the line */
         }
-        @media (min-width: 768px) {
+
+        /* Responsive adjustments for headings and text size */
+        @media (min-width: 768px) { /* Medium screens and up */
             .full-width-container {
-                padding: 3rem;
+                padding: 3rem; /* Increase padding on larger screens */
             }
-            .text-4xl { font-size: 3rem; }
-            .text-5xl { font-size: 3.75rem; }
+            .text-4xl { font-size: 3rem; } /* Adjust main title size */
+            .text-5xl { font-size: 3.75rem; } /* Adjust main title size on larger screens */
         }
     </style>
 </head>
 <body>
-    <main class="centered-content">
+    <!-- Main content container that holds all project information -->
+    <div class="full-width-container">
+
+        <!-- Project Title -->
+        <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-8">
+            Our Fashion Project: Wikidata & LLMs
+        </h1>
+
+        <!-- Welcome Section -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome</h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            Our fashion project delves into Gucci, Prada, and Dior, utilizing the rich data available in the Wikidata Knowledge Graph. As a comprehensive and well-structured knowledge base, Wikidata was invaluable for uncovering facts about fashion, especially within the luxury segment. To overcome any data deficiencies, we implemented Large Language Models (LLMs) such as ChatGPT and Gemini to generate supplementary information. Our team then manually verified and refined these generated insights against the Wikidata ontology to maintain accuracy and coherence.
+        </p>
+
+        <!-- Brand Websites Section -->
+        <h3 class="text-2xl font-bold text-gray-800 mb-3">Official Websites:</h3>
+        <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
+            <li><a href="https://www.gucci.com/us/en/" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900">Gucci</a></li>
+            <li><a href="https://www.prada.com/us/en.html" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900">Prada</a></li>
+            <li><a href="https://www.dior.com/en_us" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900">Dior</a></li>
+        </ul>
+
+        <hr class="my-10">
+
+        <!-- Why Fashion? Section -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Fashion?</h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            Choosing "fashion" as a topic for our project, particularly through the lens of the Wikidata Knowledge Graph, is driven by its inherent suitability for demonstrating advanced query capabilities and data modeling techniques. The complexities and nuances of the fashion industry provide a rich and challenging domain to apply and illustrate key knowledge engineering principles.
+            Specifically, the "fashion topic" was selected because it allowed us to effectively showcase the power of various SPARQL query components, as outlined in our project methodology. Additionally, we're also building a system that lets us explore this data intuitively.
+        </p>
+
+        <hr class="my-10">
+
+        <!-- Methodology Section (Table) -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Methodology</h2>
+        <div class="overflow-x-auto mb-10 rounded-lg border border-gray-200 shadow-sm">
+            <table class="min-w-full bg-white border-collapse">
+                <thead>
+                    <tr>
+                        <th class="px-6 py-3 bg-gray-100 text-left text-sm font-semibold text-gray-800 uppercase tracking-wider rounded-tl-lg">
+                            Tool
+                        </th>
+                        <th class="px-6 py-3 bg-gray-100 text-left text-sm font-semibold text-gray-800 uppercase tracking-wider rounded-tr-lg">
+                            Purpose
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Wikidata</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Main knowledge graph</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">SPARQL</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Querying and gap discovery</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">ChatGPT / Gemini</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Knowledge generation</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">GitHub</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Publication and reporting</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="full-width-container">
-            <!-- Project Title -->
-            <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-8">
-                Our Fashion Project: Wikidata & LLMs
-            </h1>
 
-            <!-- Welcome Section -->
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome</h2>
-            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-                Our fashion project delves into Gucci, Prada, and Dior, utilizing the rich data available in the Wikidata Knowledge Graph. As a comprehensive and well-structured knowledge base, Wikidata was invaluable for uncovering facts about fashion, especially within the luxury segment. To overcome any data deficiencies, we implemented Large Language Models (LLMs) such as ChatGPT and Gemini to generate supplementary information. Our team then manually verified and refined these generated insights against the Wikidata ontology to maintain accuracy and coherence.
-            </p>
+        <hr class="my-10">
 
-            <!-- Brand Websites Section -->
-            <h3 class="text-2xl font-bold text-gray-800 mb-3">Official Websites:</h3>
-            <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
-                <li><a href="https://www.gucci.com/us/en/" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900">Gucci</a></li>
-                <li><a href="https://www.prada.com/us/en.html" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900">Prada</a></li>
-                <li><a href="https://www.dior.com/en_us" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900">Dior</a></li>
-            </ul>
+        <!-- Mission Section -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Mission:</h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+            We're enriching the existing semantic data by:
+        </p>
+        <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
+            <li><strong class="font-semibold">Detecting gaps</strong> in the RDF descriptions of drivers.</li>
+            <li><strong class="font-semibold">Prompting LLMs</strong> to acquire and reformat the necessary missing knowledge.</li>
+            <li><strong class="font-semibold">Manually ensuring accuracy</strong> through verification and correction of the LLM outputs.</li>
+            <li><strong class="font-semibold">Documenting our approach</strong> and results clearly for full reproducibility.</li>
+        </ul>
 
-            <hr class="my-10">
+        <hr class="my-10">
 
-            <!-- Why Fashion? Section -->
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Fashion?</h2>
-            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-                Choosing "fashion" as a topic for our project, particularly through the lens of the Wikidata Knowledge Graph, is driven by its inherent suitability for demonstrating advanced query capabilities and data modeling techniques. The complexities and nuances of the fashion industry provide a rich and challenging domain to apply and illustrate key knowledge engineering principles.
-                Specifically, the "fashion topic" was selected because it allowed us to effectively showcase the power of various SPARQL query components, as outlined in our project methodology. Additionally, we're also building a system that lets us explore this data intuitively.
-            </p>
+        <!-- Identifying Gaps Section -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Identifying Gaps</h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+            Using SPARQL we uncovered several important gaps in Wikidata:
+        </p>
+        <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
+            <li>Traditional fashion analysis often qualitative</li>
+            <li>Lack of structured, comparative data insights readily available</li>
+        </ul>
 
-            <hr class="my-10">
+        <hr class="my-10">
 
-            <!-- Methodology Section (Table) -->
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Methodology</h2>
-            <div class="overflow-x-auto mb-10 rounded-lg border border-gray-200 shadow-sm">
-                <table class="min-w-full bg-white border-collapse">
-                    <thead>
-                        <tr>
-                            <th class="px-6 py-3 bg-gray-100 text-left text-sm font-semibold text-gray-800 uppercase tracking-wider rounded-tl-lg">
-                                Tool
-                            </th>
-                            <th class="px-6 py-3 bg-gray-100 text-left text-sm font-semibold text-gray-800 uppercase tracking-wider rounded-tr-lg">
-                                Purpose
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Wikidata</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Main knowledge graph</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">SPARQL</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Querying and gap discovery</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">ChatGPT / Gemini</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Knowledge generation</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">GitHub</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">Publication and reporting</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <hr class="my-10">
-
-            <!-- Mission Section -->
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Mission:</h2>
-            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
-                We're enriching the existing semantic data by:
-            </p>
-            <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
-                <li><strong class="font-semibold">Detecting gaps</strong> in the RDF descriptions of drivers.</li>
-                <li><strong class="font-semibold">Prompting LLMs</strong> to acquire and reformat the necessary missing knowledge.</li>
-                <li><strong class="font-semibold">Manually ensuring accuracy</strong> through verification and correction of the LLM outputs.</li>
-                <li><strong class="font-semibold">Documenting our approach</strong> and results clearly for full reproducibility.</li>
-            </ul>
-
-            <hr class="my-10">
-
-            <!-- Identifying Gaps Section -->
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Identifying Gaps</h2>
-            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
-                Using SPARQL we uncovered several important gaps in Wikidata:
-            </p>
-            <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
-                <li>Traditional fashion analysis often qualitative</li>
-                <li>Lack of structured, comparative data insights readily available</li>
-            </ul>
-
-            <hr class="my-10">
-
-            <!-- Outcome Section -->
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Outcome</h2>
-            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8">
-                Our project demonstrates a collaborative approach: automated tools working hand-in-hand with human curation to enhance knowledge on open platforms such as Wikidata. All our detailed analysis, case studies, and RDF graphs are available here on our website.
-            </p>
-        </div>
-    </main>
+        <!-- Outcome Section -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Outcome</h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8">
+            Our project demonstrates a collaborative approach: automated tools working hand-in-hand with human curation to enhance knowledge on open platforms such as Wikidata. All our detailed analysis, case studies, and RDF graphs are available here on our website.
+        </p>
+    </div>
 </body>
 </html>
+
        
 				
 				<!-- Copyright -->
