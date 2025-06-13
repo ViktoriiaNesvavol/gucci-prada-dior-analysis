@@ -201,6 +201,66 @@
     </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Project: Wikidata & LLMs</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for a polished look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            color: #374151; /* Dark gray text */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center p-4">
+    <div class="bg-white rounded-lg shadow-xl p-8 md:p-10 lg:p-12 max-w-4xl w-full">
+        <!-- Project Title -->
+        <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6">
+            Our Fashion Project
+        </h1>
+
+        <!-- Mission Section -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Mission:</h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+            We're enriching the existing semantic data by:
+        </p>
+        <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
+            <li><strong class="font-semibold">Detecting gaps</strong> in the RDF descriptions of drivers.</li>
+            <li><strong class="font-semibold">Prompting LLMs</strong> to acquire and reformat the necessary missing knowledge.</li>
+            <li><strong class="font-semibold">Manually ensuring accuracy</strong> through verification and correction of the LLM outputs.</li>
+            <li><strong class="font-semibold">Documenting our approach</strong> and results clearly for full reproducibility.</li>
+        </ul>
+
+        <hr class="my-8 border-gray-300 rounded-full">
+
+        <!-- Identifying Gaps Section -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Identifying Gaps</h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+            Using SPARQL we uncovered several important gaps in Wikidata:
+        </p>
+        <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
+            <li>Traditional fashion analysis often qualitative</li>
+            <li>Lack of structured, comparative data insights readily available</li>
+        </ul>
+
+        <hr class="my-8 border-gray-300 rounded-full">
+
+        <!-- Outcome Section -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Outcome</h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8">
+            Our project demonstrates a collaborative approach: automated tools working hand-in-hand with human curation to enhance knowledge on open platforms such as Wikidata. All our detailed analysis, case studies, and RDF graphs are available here on our website.
+        </p>
+
+    </div>
+</body>
+</html>
 
 
 				<!-- Copyright -->
