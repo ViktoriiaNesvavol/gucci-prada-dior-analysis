@@ -44,93 +44,6 @@
 					</nav>
 
 				<!-- Main -->
-					
-	<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion Project: Wikidata & LLMs</title>
-    <!-- Tailwind CSS CDN for easy styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom font import for a polished look */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            color: #374151; /* Dark gray text */
-        }
-    </style>
-</head>
-<body class="min-h-screen flex flex-col justify-center items-center p-4">
-    <div class="bg-white rounded-lg shadow-xl p-8 md:p-10 lg:p-12 max-w-4xl w-full">
-        <!-- Project Title -->
-        <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6">
-            Our Fashion Project
-        </h1>
-
-        <!-- Project Description -->
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8 text-center">
-            Our fashion project delves into Gucci, Prada, and Dior, utilizing the rich data available in the Wikidata Knowledge Graph. As a comprehensive and well-structured knowledge base, Wikidata was invaluable for uncovering facts about fashion, especially within the luxury segment. To overcome any data deficiencies, we implemented Large Language Models (LLMs) such as ChatGPT and Gemini to generate supplementary information. Our team then manually verified and refined these generated insights against the Wikidata ontology to maintain accuracy and coherence.
-        </p>
-
-        <hr class="my-8 border-gray-300 rounded-full">
-
-        <!-- Sections for Key Aspects -->
-        <div class="grid md:grid-cols-3 gap-8 mb-10">
-            <!-- Section 1: Brands Explored -->
-            <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-3">Brands Explored</h2>
-                <p class="text-gray-600">
-                    We focused on three iconic fashion houses: Gucci, Prada, and Dior. Each offers a unique perspective on luxury fashion, providing a rich dataset for our analysis.
-                </p>
-            </div>
-
-            <!-- Section 2: Wikidata Integration -->
-            <div class="bg-green-50 p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-bold text-green-700 mb-3">Wikidata Integration</h2>
-                <p class="text-gray-600">
-                    Leveraging the comprehensive Wikidata Knowledge Graph allowed us to extract structured information about these brands, their history, collections, and associated figures.
-                </p>
-            </div>
-
-            <!-- Section 3: LLM Enhancement -->
-            <div class="bg-yellow-50 p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-bold text-yellow-700 mb-3">LLM Enhancement</h2>
-                <p class="text-gray-600">
-                    To address data gaps, we employed Large Language Models (LLMs) like ChatGPT and Gemini. Their generative capabilities helped fill in missing details, which were then manually verified for accuracy.
-                </p>
-            </div>
-        </div>
-
-        <!-- Call to Action / Interactive Element -->
-        <div class="text-center">
-            <button id="learnMoreBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                Learn More About Our Methodology
-            </button>
-            <p id="messageArea" class="mt-4 text-gray-600 italic hidden">
-                Further details on our analysis and findings will be showcased here!
-            </p>
-        </div>
-    </div>
-
-    <script>
-        // Simple JavaScript for a basic interaction
-        document.getElementById('learnMoreBtn').addEventListener('click', function() {
-            const messageArea = document.getElementById('messageArea');
-            if (messageArea.classList.contains('hidden')) {
-                messageArea.classList.remove('hidden');
-                this.textContent = 'Hide Details';
-            } else {
-                messageArea.classList.add('hidden');
-                this.textContent = 'Learn More About Our Methodology';
-            }
-        });
-    </script>
-</body>
-</html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,33 +57,75 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            color: #374151; /* Dark gray text */
+            background-color: #f8f8f8; /* Very light gray background */
+            color: #333333; /* Dark gray for main text */
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            min-height: 100vh; /* Ensure body takes full viewport height */
+            display: flex; /* Use flexbox to easily center content */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center content horizontally */
+        }
+        /* Ensure the main container takes full width and has padding */
+        .full-width-container {
+            width: 100%;
+            padding: 2.5rem; /* Equivalent to p-10, provides padding inside the container */
+            box-sizing: border-box; /* Include padding in the element's total width and height */
+            max-width: 1200px; /* Optional: A max-width to prevent content from stretching too wide on very large screens */
+        }
+        /* Custom styling for links to maintain B&W theme */
+        a {
+            color: #555555; /* Darker gray for links */
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #000000; /* Black on hover */
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-center items-center p-4">
-    <div class="bg-white rounded-lg shadow-xl p-8 md:p-10 lg:p-12 max-w-4xl w-full">
+<body>
+    <!-- Main content container that spans the full width -->
+    <div class="bg-white shadow-lg full-width-container">
         <!-- Project Title -->
+        <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-8">
+            Our Fashion Project: Wikidata & LLMs
+        </h1>
+
+        <!-- Welcome Section -->
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome</h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            Our fashion project delves into Gucci, Prada, and Dior, utilizing the rich data available in the Wikidata Knowledge Graph. As a comprehensive and well-structured knowledge base, Wikidata was invaluable for uncovering facts about fashion, especially within the luxury segment. To overcome any data deficiencies, we implemented Large Language Models (LLMs) such as ChatGPT and Gemini to generate supplementary information. Our team then manually verified and refined these generated insights against the Wikidata ontology to maintain accuracy and coherence.
+        </p>
+
+        <!-- Brand Websites -->
+        <h3 class="text-2xl font-bold text-gray-800 mb-3">Official Websites:</h3>
+        <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
+            <li><a href="https://www.gucci.com/en/us/" target="_blank" class="font-medium hover:text-gray-900">Gucci</a></li>
+            <li><a href="https://www.prada.com/us/en.html" target="_blank" class="font-medium hover:text-gray-900">Prada</a></li>
+            <li><a href="https://www.dior.com/en_us" target="_blank" class="font-medium hover:text-gray-900">Dior</a></li>
+        </ul>
+
+        <hr class="my-10 border-gray-300 rounded-full">
+
         <!-- Why Fashion? Section -->
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Fashion?</h2>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8">
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
             Choosing "fashion" as a topic for our project, particularly through the lens of the Wikidata Knowledge Graph, is driven by its inherent suitability for demonstrating advanced query capabilities and data modeling techniques. The complexities and nuances of the fashion industry provide a rich and challenging domain to apply and illustrate key knowledge engineering principles.
             Specifically, the "fashion topic" was selected because it allowed us to effectively showcase the power of various SPARQL query components, as outlined in our project methodology. Additionally, we're also building a system that lets us explore this data intuitively.
         </p>
 
-        <hr class="my-8 border-gray-300 rounded-full">
+        <hr class="my-10 border-gray-300 rounded-full">
 
         <!-- Methodology Section (Table) -->
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Methodology</h2>
-        <div class="overflow-x-auto mb-8 rounded-lg shadow-md">
+        <div class="overflow-x-auto mb-10 rounded-lg border border-gray-200">
             <table class="min-w-full bg-white border-collapse">
                 <thead>
                     <tr>
-                        <th class="px-6 py-3 bg-blue-100 text-left text-sm font-semibold text-blue-800 uppercase tracking-wider rounded-tl-lg">
+                        <th class="px-6 py-3 bg-gray-100 text-left text-sm font-semibold text-gray-800 uppercase tracking-wider">
                             Tool
                         </th>
-                        <th class="px-6 py-3 bg-blue-100 text-left text-sm font-semibold text-blue-800 uppercase tracking-wider rounded-tr-lg">
+                        <th class="px-6 py-3 bg-gray-100 text-left text-sm font-semibold text-gray-800 uppercase tracking-wider">
                             Purpose
                         </th>
                     </tr>
@@ -196,48 +151,20 @@
             </table>
         </div>
 
-        <!-- The previous sections "Wikidata Integration", "LLM Enhancement" and the "Call to Action" button were removed as requested -->
+        <hr class="my-10 border-gray-300 rounded-full">
 
-    </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion Project: Wikidata & LLMs</title>
-    <!-- Tailwind CSS CDN for easy styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom font import for a polished look */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            color: #374151; /* Dark gray text */
-        }
-    </style>
-</head>
-<body class="min-h-screen flex flex-col justify-center items-center p-4">
-    <div class="bg-white rounded-lg shadow-xl p-8 md:p-10 lg:p-12 max-w-4xl w-full">
-        <!-- Project Title -->
-        <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6">
-
-        </h1>
         <!-- Mission Section -->
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Mission:</h2>
         <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
             We're enriching the existing semantic data by:
         </p>
         <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
-            <li><strong class="font-semibold">Detecting gaps</strong> in the RDF descriptions of drivers.</li>
             <li><strong class="font-semibold">Prompting LLMs</strong> to acquire and reformat the necessary missing knowledge.</li>
             <li><strong class="font-semibold">Manually ensuring accuracy</strong> through verification and correction of the LLM outputs.</li>
             <li><strong class="font-semibold">Documenting our approach</strong> and results clearly for full reproducibility.</li>
         </ul>
 
-        <hr class="my-8 border-gray-300 rounded-full">
+        <hr class="my-10 border-gray-300 rounded-full">
 
         <!-- Identifying Gaps Section -->
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Identifying Gaps</h2>
@@ -249,17 +176,19 @@
             <li>Lack of structured, comparative data insights readily available</li>
         </ul>
 
-        <hr class="my-8 border-gray-300 rounded-full">
+        <hr class="my-10 border-gray-300 rounded-full">
 
         <!-- Outcome Section -->
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Outcome</h2>
         <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8">
             Our project demonstrates a collaborative approach: automated tools working hand-in-hand with human curation to enhance knowledge on open platforms such as Wikidata. All our detailed analysis, case studies, and RDF graphs are available here on our website.
         </p>
-
     </div>
 </body>
 </html>
+	
+       
+
 
 
 				<!-- Copyright -->
