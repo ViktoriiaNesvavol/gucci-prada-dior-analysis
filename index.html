@@ -47,7 +47,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	 <meta charset="UTF-8">
+  <title>Centered Image Links</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .centered-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .image-links a {
+      margin: 10px;
+      display: inline-block;
+    }
+    .image-links img {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      width: 200px;
+      height: auto;
+      transition: transform 0.2s;
+    }
+    .image-links img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <main class="centered-content">
+    <div class="image-links">
+      <a href="https://site1.com" target="_blank">
+        <img src="photo1.jpg" alt="Site 1">
+      </a>
+      <a href="https://site2.com" target="_blank">
+        <img src="photo2.jpg" alt="Site 2">
+      </a>
+      <a href="https://site3.com" target="_blank">
+        <img src="photo3.jpg" alt="Site 3">
+      </a>
+    </div>
+    <meta charset="UT-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion Project: Wikidata & LLMs</title>
     <!-- Tailwind CSS CDN for easy styling -->
@@ -184,6 +228,9 @@
             Our project demonstrates a collaborative approach: automated tools working hand-in-hand with human curation to enhance knowledge on open platforms such as Wikidata. All our detailed analysis, case studies, and RDF graphs are available here on our website.
         </p>
     </div>
+</body>
+</html>
+ </main>
 </body>
 </html>
 	
