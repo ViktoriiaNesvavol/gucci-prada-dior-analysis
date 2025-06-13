@@ -69,18 +69,6 @@
             align-items: center; /* Center content horizontally */
         }
 
-        /* Main content container styling */
-        /* Takes full width, adds padding, and sets a max-width for readability on large screens */
-        .full-width-container {
-            width: 100%;
-            padding: 2.5rem; /* ~40px padding on all sides for content */
-            box-sizing: border-box; /* Include padding in element's total width */
-            max-width: 1200px; /* Limits overall content width for better readability on very wide screens */
-            background-color: #ffffff; /* White background for the content area */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            border-radius: 0.5rem; /* Rounded corners */
-        }
-
         /* Styling for links to maintain the black and white theme */
         a {
             color: #555555; /* Darker gray for links */
@@ -100,20 +88,28 @@
 
         /* Responsive adjustments for headings and text size */
         @media (min-width: 768px) { /* Medium screens and up */
-            .full-width-container {
-                padding: 3rem; /* Increase padding on larger screens */
-            }
             .text-4xl { font-size: 3rem; } /* Adjust main title size */
             .text-5xl { font-size: 3.75rem; } /* Adjust main title size on larger screens */
+        }
+
+        /* Styling for the brand logos */
+        .brand-logo {
+            width: 80px; /* Adjust as needed */
+            height: auto;
+            margin-right: 15px; /* Space between image and text */
+            vertical-align: middle; /* Align image with text */
+            border-radius: 0.25rem; /* Small rounded corners for images */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow for images */
         }
     </style>
 </head>
 <body>
     <!-- Main content container that holds all project information -->
-    <div class="full-width-container">
+    <div class="bg-white shadow-lg p-10 md:p-12 w-full max-w-screen-xl mx-auto rounded-lg">
 
         <!-- Project Title -->
         <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-8">
+            Our Fashion Project: Wikidata & LLMs
         </h1>
 
         <!-- Welcome Section -->
@@ -125,9 +121,21 @@
         <!-- Brand Websites Section -->
         <h3 class="text-2xl font-bold text-gray-800 mb-3">Official Websites:</h3>
         <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed mb-8 pl-4">
-            <li><a href="https://www.gucci.com/us/en/" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900">Gucci</a></li>
-            <li><a href="https://www.prada.com/us/en.html" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900">Prada</a></li>
-            <li><a href="https://www.dior.com/en_us" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900">Dior</a></li>
+            <li class="flex items-center mb-2">
+                <a href="https://www.gucci.com/us/en/" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900 flex items-center">
+                    <img src="gucci.png" alt="Gucci Logo" class="brand-logo"> Gucci
+                </a>
+            </li>
+            <li class="flex items-center mb-2">
+                <a href="https://www.prada.com/us/en.html" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900 flex items-center">
+                    <img src="prada.jpg" alt="Prada Logo" class="brand-logo"> Prada
+                </a>
+            </li>
+            <li class="flex items-center mb-2">
+                <a href="https://www.dior.com/en_us" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-gray-900 flex items-center">
+                    <img src="dior.png" alt="Dior Logo" class="brand-logo"> Dior
+                </a>
+            </li>
         </ul>
 
         <hr class="my-10">
@@ -214,6 +222,8 @@
 </html>
 
        
+      
+
 				
 				<!-- Copyright -->
 					<div id="copyright">
